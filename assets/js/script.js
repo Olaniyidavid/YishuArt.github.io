@@ -197,6 +197,20 @@ window.addEventListener("scroll", scrollReveal);
 
 scrollReveal();
 
+let currentIndex = 0;
+
+function moveSlide(direction) {
+  const slides = document.querySelectorAll('.gallery-item');
+  const totalSlides = slides.length;
+
+  // Adjust the currentIndex based on direction
+  currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+
+  // Move carousel by changing the translateX value
+  const carousel = document.querySelector('.gallery-list.carousel');
+  const slideWidth = slides[0].clientWidth;
+  carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
 
 
 /**
