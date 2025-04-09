@@ -547,6 +547,34 @@ body.active { overflow: hidden; }
 .gallery-item,
 .gallery-card { position: relative; }
 
+.hover-img-swap {
+  position: relative;
+}
+
+.hover-img-swap .img-cover {
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hover-img-swap .primary-img {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hover-img-swap .hover-img {
+  opacity: 0;
+  z-index: 2;
+}
+
+.hover-img-swap:hover .primary-img {
+  opacity: 0;
+}
+
+.hover-img-swap:hover .hover-img {
+  opacity: 1;
+}
 
 
 /*-----------------------------------*\
